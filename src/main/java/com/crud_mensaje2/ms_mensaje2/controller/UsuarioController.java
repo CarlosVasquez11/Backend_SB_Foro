@@ -48,21 +48,10 @@ public class UsuarioController {
             
             usuarioSaved.setId_usuario(iUsuarioService.returnLastCreated().getId_usuario());
             usuarioSaved.setNombre(iUsuarioService.returnLastCreated().getNombre());
-            usuarioSaved.setImagen(iUsuarioService.returnLastCreated().getImagen());
+            usuarioSaved.setApellido(iUsuarioService.returnLastCreated().getApellido());
             serviceResponse.setMessage("usuario guradado con exito");
         }
         return new ResponseEntity<>(usuarioSaved ,HttpStatus.OK);
-    }
-
-    @PostMapping("/update")
-    public ResponseEntity<ServiceResponse> update(@RequestBody Usuario usuario){
-        ServiceResponse serviceResponse = new ServiceResponse();
-        int result =iUsuarioService.update(usuario);
-        if(result==1){
-            serviceResponse.setMessage("usuario actualizado con exito");
-
-        }
-        return new ResponseEntity<>(serviceResponse,HttpStatus.OK);
     }
 
     @GetMapping("/delete/{id}")

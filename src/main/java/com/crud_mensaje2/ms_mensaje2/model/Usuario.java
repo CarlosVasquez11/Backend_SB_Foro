@@ -6,5 +6,5 @@ import lombok.Data;
 public class Usuario {
     int id_usuario;
 	String nombre;
-	String imagen;
+	String apellido;
 }

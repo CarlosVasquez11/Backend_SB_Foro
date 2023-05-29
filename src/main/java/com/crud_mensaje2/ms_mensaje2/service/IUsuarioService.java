@@ -8,8 +8,7 @@ public interface IUsuarioService {
     public List<Usuario> findAll();
     public int save(Usuario usuario);
     public Usuario returnUserById(int id_usuario);
-    public Usuario returnLastCreated();
-    public int update(Usuario usuario);
+    public Usuario returnLastCreated();;
     public int deleteById(int id);
 
 }

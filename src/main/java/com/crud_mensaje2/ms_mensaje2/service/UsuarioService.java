@@ -69,18 +69,5 @@ public class UsuarioService implements IUsuarioService{
         }
         return usuarioSaved;
     }
-    @Override
-    public int update(Usuario usuario) {
-        int row;
-        try{    
-            row=iUsuarioRepository.update(usuario);
-
-        }catch(Exception ex){
-            throw ex;
-        }
-        return row;
-    }
-
-   
     
 }

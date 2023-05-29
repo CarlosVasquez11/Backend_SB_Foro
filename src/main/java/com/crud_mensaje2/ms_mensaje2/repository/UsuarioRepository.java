@@ -40,13 +40,6 @@ public class UsuarioRepository implements IUsuarioRepository{
     @Override
     public int save(Usuario usuario) {
         String SQL="INSERT INTO tbl_usuario VALUES (?,?)";
-        return jdbcTemplate.update(SQL,new Object[]{usuario.getNombre(),usuario.getImagen()});
+        return jdbcTemplate.update(SQL,new Object[]{usuario.getNombre(),usuario.getApellido()});
     }
-
-    @Override
-    public int update(Usuario usuario) {
-        String SQL="UPDATE tbl_usuario SET nombre=?,imagen=? WHERE id_usuario=?";
-        return jdbcTemplate.update(SQL,new Object[]{usuario.getNombre(),usuario.getImagen(),usuario.getId_usuario()});
-    }
-    
 }

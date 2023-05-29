@@ -9,6 +9,5 @@ public interface IUsuarioRepository {
     public int save(Usuario usuario);
     public Usuario returnUserById(int id_usuario);
     public Usuario returnLastCreated();
-    public int update(Usuario usuario);
     public int deleteById(int id);
 }
