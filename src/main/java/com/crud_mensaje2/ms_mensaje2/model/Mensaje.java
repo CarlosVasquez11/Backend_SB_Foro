@@ -10,5 +10,7 @@ public class Mensaje {
 	String contenido;
 	int puntos;
 	Timestamp hora;
+	int nivel;
+	int jerarquia;
 	int id_usuario ;
 }

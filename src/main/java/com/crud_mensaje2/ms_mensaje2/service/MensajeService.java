@@ -34,15 +34,28 @@ public class MensajeService implements IMensajeService{
     }
 
     @Override
-    public int updatePuntos(Mensaje mensaje) {
+    public int subirPuntos(Mensaje mensaje) {
 
         int row;
         try{
-            row=iMensajeRepository.updatePuntos(mensaje);
+            row=iMensajeRepository.subirPuntos(mensaje);
 
         }catch(Exception ex){
             throw ex;
         }
-        return row;    }
+        return row;
+    }
+    @Override
+    public int disminuirPuntos(Mensaje mensaje) {
+
+        int row;
+        try{
+            row=iMensajeRepository.disminuirPuntos(mensaje);
+
+        }catch(Exception ex){
+            throw ex;
+        }
+        return row;
+    }
     
 }

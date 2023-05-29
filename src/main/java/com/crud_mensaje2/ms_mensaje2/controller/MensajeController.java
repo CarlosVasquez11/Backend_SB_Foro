@@ -39,12 +39,21 @@ public class MensajeController {
         return new ResponseEntity<>(serviceResponse,HttpStatus.OK);
     }
 
-    @PostMapping("/updatePuntos")
-    public ResponseEntity<ServiceResponse> updatePuntos(@RequestBody Mensaje mensaje){
+    @PostMapping("/subirPuntos")
+    public ResponseEntity<ServiceResponse> subirPuntos(@RequestBody Mensaje mensaje){
         ServiceResponse serviceResponse = new ServiceResponse();
-        int result =imensajeService.updatePuntos(mensaje);
+        int result =imensajeService.subirPuntos(mensaje);
         if(result==1){
-            serviceResponse.setMessage("Mensaje actualizado con exito");
+            serviceResponse.setMessage("Puntos subidos");
+        }
+        return new ResponseEntity<>(serviceResponse,HttpStatus.OK);
+    }
+    @PostMapping("/disminuirPuntos")
+    public ResponseEntity<ServiceResponse> disminuirPuntos(@RequestBody Mensaje mensaje){
+        ServiceResponse serviceResponse = new ServiceResponse();
+        int result =imensajeService.disminuirPuntos(mensaje);
+        if(result==1){
+            serviceResponse.setMessage("Puntos Bajados");
         }
         return new ResponseEntity<>(serviceResponse,HttpStatus.OK);
     }
